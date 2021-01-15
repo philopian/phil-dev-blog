@@ -1,6 +1,8 @@
 
+- [local development](http://localhost:8000)
+- [graphQL playground](http://localhost:8000/___graphql)
 
-
+# Adding MDX to the blog starter
 0. Create a blog
 ```sh
 $ gatsby new phil-willis-blog https://github.com/gatsbyjs/gatsby-starter-blog
@@ -72,3 +74,7 @@ $ npm install --save gatsby-plugin-mdx gatsby-plugin-feed-mdx @mdx-js/mdx @mdx-j
   - <section dangerouslySetInnerHTML={{ __html: post.html }} />
   + <MDXRenderer>{post.body}</MDXRenderer>
   ```
+
+# Adding Monokai code theming
+- Go [here](https://github.com/Swaagie/prismjs-monokai) and use this or copy the raw css to your project
+- If you choose to save it locally add the file here `src/themes/monokai.css`
