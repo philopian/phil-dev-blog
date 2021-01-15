@@ -3,7 +3,7 @@ module.exports = {
     title: `Phil Dev Blog`,
     author: {
       name: `Phil Willis`,
-      summary: `who lives and works in Portland, Oregon building useful things.`,
+      summary: `Just a bunch of stuff i've picked up along the way`,
     },
     description: `Just a bunch of stuff i've picked up along the way`,
     siteUrl: `https://blog.phil-willis.com`,
