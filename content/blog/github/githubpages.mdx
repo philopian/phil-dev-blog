@@ -1,47 +1,51 @@
-# Github pages
-- A Gatsby site can be hosted on GitHub Pages with a few configurations to the codebase and the repository’s settings.
+---
+title: Github Pages
+date: "2021-01-17"
+description: Setting up Github Pages
+---
 
 
-1. Create a new branch called `gh-pages`
+A Gatsby site can be hosted on GitHub Pages with a few configurations to the codebase and the github repository’s settings.
+
+## Setup
+1. Install the [gh-pages](https://www.npmjs.com/package/gh-pages) npm package
   ```sh
-  $ git checkout -b gh-pages
-  ```
-
-2. Install the npm package
-  ```sh
-  $ git checkout -b gh-pages
   $ npm install gh-pages --save-dev
   ```
-  - add a build script to your `package.json`
-
+  - Add a build script to your `package.json`
+  - With npm scripts if you prefix the scripts key name with `pre` it will happen before the command and `post` it will happen after
     ```js
     "scripts": {
+      "predeploy:gh": "gatsby clean",
       "deploy:gh": "gatsby build --prefix-paths && gh-pages -d public"
     }
     ```
+  - When you run npm run deploy all contents of the public folder will be moved to your repository’s gh-pages branch. 
+  - Make sure that your repository’s settings has the gh-pages branch set as the source to deploy from.
 
-3. Update Github Settings
-- Navigate to your repo > Settings > Scroll down to the `GitHub Pages` Section
-![](./gh-pages-screenshot.png)
+2. Update Github Pages Settings
+  - You must select which branch will be deployed from your repository settings in GitHub for GitHub Pages to function. 
+  - Navigate to your repo > Settings > Scroll down to the `GitHub Pages` Section
+  ![](./gh-pages-screenshot.png)
 
-
-4. run the npm `build:gh` script
-
-```sh
-$ git checkout -b gh-pages
-# make commits
-$ git push origin gh-pages
-```
-
-
-
-5. Update the Gatsby 
+3. Update the Gatsby 
   - add a `pathPrefix` to the `gatsby-config.js` file
-```js
-module.exports = {
-  pathPrefix: "/<REPO_NAME>",
-}
-```
+    ```js
+    module.exports = {
+      pathPrefix: "/<REPO_NAME>",
+    }
+    ```
+
+
+
+## Publishing
+All you need to do to publish to githubpages is to run the npm `build:gh` script
+  ```sh
+  $ npm run build:gh
+  ```
+
+
+
 
 
 
