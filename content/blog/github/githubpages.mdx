@@ -35,8 +35,11 @@ A Gatsby site can be hosted on GitHub Pages with a few configurations to the cod
       pathPrefix: "/<REPO_NAME>",
     }
     ```
-
-
+4. Create a new branch called gh-pages
+  - The branch name gh-pages is a special branch that github uses to get files to build and publish from.
+    ```sh
+    $ git checkout -b gh-pages
+    ```
 
 ## Publishing
 All you need to do to publish to githubpages is to run the npm `build:gh` script
