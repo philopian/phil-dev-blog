@@ -1,0 +1,93 @@
+---
+title: Em & Rem
+date: "2021-01-27"
+description: Making Sense of Em & Rem
+topics: webdesign,css
+---
+
+
+
+# Font size
+- pixels, relative to a container(em), & relative to the document (rem)
+- Pixels are 
+
+- If you wanna go "retro, sustain the norms because you know what works already and as long as it works stand on your lawn and share your fist vigorously"
+- This is the use for pixels being used within HTML & CSS
+- We now have a variety of differnent screensizes to view our webpages
+- Font size does not specifically correlate to pixels on screen size
+- All font units in CSS (including px) are capable of handling floats in modern browsers
+
+- rem = "root" em
+
+
+# Overview
+- `EM` relative to parent's container, however sometimes results in undesired compounding
+- `REM` relative to the document
+- em & rem helps to make your elements responsively scale
+
+```css
+/* you can define the base font-size in the `::root` or `html` selector*/
+
+::root{
+  font-size: 16px; /* 16px is generally the browser default size*/
+}
+html {
+  font-size: 16px; /* 16px is generally the browser default size*/
+}
+```
+
+
+- example of `em`:
+  ```css
+  html {
+    font-size: 16px; /* 16px is generally the browser default size*/
+  }
+
+  .container {
+    font-size: 25px; /*This will compound the children based on this value */
+  }
+  h1 {
+    font-size: 2.5em;
+  }
+  p{
+    font-size: 1em;
+  }
+  ```
+
+- example of `rem`:
+  ```css
+  html {
+    font-size: 16px; /* 16px is generally the browser default size*/
+  }
+
+  .container {
+    font-size: 25px; /*This will NOT compound the child font-sizes */
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  p{
+    font-size: 1rem;
+  }
+  ```
+
+
+
+# You don't have to use these units just for fonts
+- When you use them for margin and padding
+- The margin/padding is looking at it's element's font-size, not the parent or document
+  ```css
+  p{
+    font-size: 2.5em;
+    margin: 1em; /* This margins is equal to the font-size of 2.5em */
+  }
+  ```
+- REM ALWAYS LOOKING AT THE ROOT
+- it might be best to use em for scaling different versions of your
+
+
+
+
+
+
+# Float, flexbox, grids
