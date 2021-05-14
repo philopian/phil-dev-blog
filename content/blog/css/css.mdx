@@ -1,0 +1,50 @@
+---
+title: CSS
+date: "2021-01-28"
+description: CSS
+topic: css
+---
+
+
+
+
+# Placing a dropshow above child element
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+  #top{
+    width: 100%;
+    height: 100px;
+    box-shadow: 3px 3px 3px #333;
+    
+    /*IMPORTANT*/
+    position: relative;
+    /*IMPORTANT*/
+  }
+
+  #middle{
+    width: 100%;
+    height: 200px;
+    background-color: orange;
+  }
+  #inner-middle{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    background-color: green;
+  }
+  </style>
+</head>
+<body>
+  <div id="top"></div>
+  <div id="middle">
+    <div id="inner-middle"></div>
+  </div>
+</body>
+</html>
+```
+
+

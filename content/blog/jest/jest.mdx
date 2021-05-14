@@ -1,0 +1,35 @@
+---
+title: Jest
+date: "2021-02-06"
+description: Jest
+topic: Jest
+---
+
+
+
+
+# moduleNameMapper
+- you can map modules or webpack alias here
+-
+
+
+
+```js
+
+moduleNameMapper: {
+// Look for all files and point to a module
+"\\.(css|scss|styl)$": "<rootDir>/node_modules/jest-css-modules"
+"\\.(jpg|png|woff)$": "<rootDir>/.jest/fileMock.js"
+
+// Alias for an exact file
+"EXACT_FILE$": "<rootDir>/src/main.js"
+}
+
+```
+
+
+
+
+
+
+

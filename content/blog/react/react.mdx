@@ -1,0 +1,63 @@
+---
+title: React
+date: "2021-02-02"
+description: Hello React
+---
+
+# What is React
+- [reactjs homepage](https://reactjs.org/)
+- React is a JS library for User Interface
+- React allows you to breakup your website into reusable components
+- It's like making custom HTML elements
+
+
+- [codepen](https://codepen.io/)
+- [codesandbox](https://codesandbox.io/)
+
+- In codepen
+  - click the gear icon in the JS section 
+  - Add `Babel` as the JavaScript Preprocessor
+  - Add `react` & `react-dom`
+
+    ```html
+    <h1>Hello React</h1>
+    <div id="app"></div>
+    ```
+    ```js
+    // React Component
+    function Card(props){
+      const {name} = props
+      return (
+        <div className="card">
+          hello {name}
+        </div>
+      )
+    }
+
+    const app = (
+      <div>
+        <Card name="Phil"/>
+        <Card name="Dan"/>
+      </div>
+    )
+
+    // Add it to the DOM
+    ReactDOM.render(app, document.querySelector('#app'));
+    ```
+
+# 2 Kinds of Applications
+1. Single Page Application
+  - Only one HTML page 
+  - the entire page in under React control 
+  - AJAX loading data
+  - typically only ONE `ReactDOM.render()` call
+2. Multi Page Application
+
+
+
+
+
+
+
+
+

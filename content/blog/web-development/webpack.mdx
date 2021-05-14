@@ -1,0 +1,58 @@
+---
+title: Webpack
+date: "2021-01-27"
+description: Webpack
+topics: webdesign,css
+---
+
+
+
+
+# Alias folders & files
+- Update your `webpack.config.js` file
+  ```js
+  {
+    resolve: {
+      alias:{
+        SomeFolderName: path.resolve(__dirname, 'src/some-folder')
+
+        // The trailing `$` given to the object's key is signify an exact match
+        SomeExactFile$: path.resolve(__dirname, 'src/some-file.js')
+      }
+    }
+  }
+  ```
+- Now
+  ```js
+  // instead of 
+  import SomeFolderName from 'src/some-folder'
+
+  // NOW you can 
+  import SomeFolderName from 'SomeFolderName'
+
+
+  // instead of 
+  import someFile from 'src/some-file.js'
+
+  // NOW you can 
+  import someFile from 'SomeExactFile'
+  ```
+- you can update your ESLint
+- Make sure you have installed the `eslint-import-resolver-alias` package
+  ```yaml
+  settings:
+    import/resolver:
+      alias:
+        map:
+        - - SomeFolderName
+          - "./src/some-folder"
+        - - SomeFile
+          - "./src/some-file.js"
+  ```
+- Now you won't get the linter errors
+
+
+
+
+
+

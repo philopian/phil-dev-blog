@@ -1,0 +1,38 @@
+---
+title: Testin React
+date: "2021-01-28"
+description: Testing React
+---
+
+
+
+
+# Using `@testing-library/react`
+
+- [](https://www.polvara.me/posts/five-things-you-didnt-know-about-testing-library/)
+1. Everything is a DOM node
+  - Many think that getByText and other helper methods return some special wrapper around the React component.
+  - When you work with Testing Library you are dealing with DOM nodes.
+
+
+
+```js
+import React from "react";
+import { render, screen } from "@testing-library/react";
+
+test("everything is a node", () => {
+  const Foo = () => <div>Hello</div>;
+  render(<Foo />);
+  expect(screen.getByText("Hello")).toBeInstanceOf(Node);
+  expect(screen.getByText("Heeeello")).toBeNull(); // Test to see if NOT present
+});
+
+```
+
+
+
+
+
+
+
+
